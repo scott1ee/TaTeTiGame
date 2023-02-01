@@ -43,7 +43,24 @@ body {
   text-align: center;
 }
 
-.footer { 
+.navbar {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ta {
+  color: hsl(348, 100%, 61%);
+}
+
+.te {
+  color: hsl(48, 100%, 67%);
+}
+
+.ti {
+  color: hsl(141, 53%, 53%);
+}
+
+.footer {
   background-color: #fff;
   font-size: 10px;
 }
