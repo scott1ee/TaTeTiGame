@@ -1,3 +1,14 @@
+/* 
+
+Muestra la ubicación para cada movimiento en el formato (columna, fila) en la lista del historial de movimientos.
+Convierte en negrita el elemento actualmente seleccionado en la lista de movimientos.
+Reescribe el Board para usar 2 ciclos para hacer los cuadrados en vez de escribirlos a mano.
+Agrega un botón de switch que te permita ordenar los movimientos en orden ascendente o descendente.
+Cuando alguien gana, resalta los 3 cuadrados que hicieron que gane.
+Cuando nadie gana, muestra un mensaje acerca de que el resultado es un empate.
+
+*/
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bulma/css/bulma.min.css'
@@ -84,19 +95,19 @@ class Game extends React.Component {
     const history = this.state.history;
     const current = history[history.length - 1];
     const winner = calculateWinner(current.squares);
-
+    // Muestra la ubicación para cada movimiento en el formato (columna, fila) en la lista del historial de movimientos.
     const moves = history.map((step, move) => {
       const desc = move ?
-        'Ir al movimiento ' + move :
+        'Ir al movimiento ' + move + ':' + step:
         'Reiniciar el juego';
       return (
-        <button className='movs button is-rounded is-small' onClick={() => this.jumpTo(move)}>{desc}</button>
+        <button className='movs button is-rounded is-small' onClick={() => this.jumpTo(move)}>{desc}</  button>
       );
     });
 
     let status;
     if (winner) {
-      status = 'GANADOR: ' + winner;
+      status = '¡EL GANADOR ES ' + winner + '!';
     } else {
       status = 'Proximo jugador: ' + (this.state.xIsNext ? 'X' : 'O');
     }

@@ -63,4 +63,7 @@ body {
 .footer {
   background-color: #fff;
   font-size: 10px;
+  opacity: 40%;
+  bottom: 0;
+  width: 100%;
 }
